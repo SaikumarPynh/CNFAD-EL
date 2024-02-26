@@ -11,19 +11,34 @@ import com.example.StudentManagementSystem.repository.StudentRepository;
 
 @Service
 public class CourseService {
+//
+//	@Autowired
+//	private CourseRepository cr;
+//
+//    public void addCourse(String cname) {
+//        Course c=new Course();
+//        c.setName(cname);
+//        cr.save(c);
+//        
+//    }
+//
+//    public List<Course> getAllCourse() {
+//        return cr.findAll();
+//    }
+	
+	private CourseRepository courserepository;
 
-	@Autowired
-	private CourseRepository cr;
-
-    public void addCourse(String cname) {
-        Course c=new Course();
-        c.setName(cname);
-        cr.save(c);
-        
-    }
-
-    public List<Course> getAllCourse() {
-        return cr.findAll();
+	public CourseService(CourseRepository courserepository) {
+		super();
+		this.courserepository = courserepository;
+	}
+	
+	public List<Course> getAllCourse(){
+		return courserepository.findAll();
+	}
+	
+    public Course saveCourse(Course course) {
+    	return courserepository.save(course);
     }
 	
 }

@@ -14,17 +14,7 @@ public class StudentService {
     @Autowired
     private StudentRepository studentRepository;
 
-//    public void addStudent(String firstname, String lastname, String usn, String section, String email,Course course) {
-//    	Student s=new Student();
-//    	s.setFirstname(firstname);
-//    	s.setLastname(lastname);
-//    	s.setUsn(usn);
-//    	s.setSection(section);
-//    	s.setEmail(email);
-//    	s.setCourse(course);
-//        studentRepository.save(s);
-//    }
-//
+
     
     public StudentService(StudentRepository studentrepository) {
     	super();
