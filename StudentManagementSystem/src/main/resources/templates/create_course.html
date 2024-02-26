@@ -37,7 +37,7 @@
           <a class="nav-link active" aria-current="page" th:href="@{/students}">Student</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="@{/courses}">Course</a>
+          <a class="nav-link" th:href="@{/courses}">Course</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" th:href="@{/students}">View</sa>
@@ -52,75 +52,20 @@
 	  		<div class="container">
 	  		<div class="row">
 	  			<div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
-	  			<h1 class="text-center"> Create New Student</h1>
+	  			<h1 class="text-center"> Create New Course</h1>
 	  			<div class="card-body">
-	  			<form th:action="@{/students}" th:object="${student}" method="POST">
+	  			<form th:action="@{/courses}" th:object="${course}" method="POST">
 	  			<div class="form-group">
-	  			<label> Student First Name</label>
+	  			<label> Course Name</label>
 	  				<input
 	  					type="text"
-	  					name="firstName"
-	  					th:field="*{firstname}"
+	  					name="coursename"
+	  					th:field="*{name}"
 	  					class="form-control"
-	  					placeholder="Enter First name"
+	  					placeholder="Enter Course name"
 	  				/>
 	  			</div>
 	  			
-	  			
-	  			<div class="form-group">
-	  			<label> Student Last Name</label>
-	  				<input
-	  					type="text"
-	  					name="lastName"
-	  					th:field="*{lastname}"
-	  					class="form-control"
-	  					placeholder="Enter Last name"
-	  				/>
-	  			</div>
-	  			
-	  			<div class="form-group">
-	  			<label> Student USN</label>
-	  				<input
-	  					type="text"
-	  					name="usn"
-	  					th:field="*{usn}"
-	  					class="form-control"
-	  					placeholder="Enter usn"
-	  				/>
-	  			</div>
-	  			
-	  			<div class="form-group">
-	  			<label> Student Section</label>
-	  				<input
-	  					type="text"
-	  					name="section"
-	  					th:field="*{section}"
-	  					class="form-control"
-	  					placeholder="Enter  Section"
-	  				/>
-	  			</div>
-	  			
-	  			<div class="form-group">
-	  			<label> Student Email</label>
-	  				<input
-	  					type="text"
-	  					name="email"
-	  					th:field="*{email}"
-	  					class="form-control"
-	  					placeholder="Enter email"
-	  				/>
-	  			</div>
-	  			
-	  			<div class="form-group">
-	  			<label> Student Course</label>
-	  				<input
-	  					type="number"
-	  					name="course"
-	  					th:field="*{course}"
-	  					class="form-control"
-	  					placeholder="Enter course"
-	  				/>
-	  			</div>
 	  			<div class="box-footer">
 	  			<button type="submit" class="btn btn-primary">Submit</button>
 	  			

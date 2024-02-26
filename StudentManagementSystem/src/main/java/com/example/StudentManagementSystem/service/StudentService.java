@@ -14,19 +14,31 @@ public class StudentService {
     @Autowired
     private StudentRepository studentRepository;
 
-    public void addStudent(String firstname, String lastname, String usn, String section, String email,Course course) {
-    	Student s=new Student();
-    	s.setFirstname(firstname);
-    	s.setLastname(lastname);
-    	s.setUsn(usn);
-    	s.setSection(section);
-    	s.setEmail(email);
-    	s.setCourse(course);
-        studentRepository.save(s);
-    }
 
+    
+    public StudentService(StudentRepository studentrepository) {
+    	super();
+    	this.studentRepository=studentrepository;
+    	
+    }
     public List<Student> getAllStudents() {
         return studentRepository.findAll();
     }
+    
+    public Student saveStudent(Student student) {
+    	return studentRepository.save(student);
+    }
+    
+    public Student getStudentById(Long id) {
+    	return studentRepository.findById(id).get();
+    }
+    public Student  updateStudent(Student student) {
+    	return studentRepository.save(student);
+    }
+    
+    public void deletestudentbyid(Long id) {
+    	studentRepository.deleteById(id);
+    }
+    
 }
 
